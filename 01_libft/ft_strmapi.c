@@ -6,7 +6,7 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 16:37:31 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/11 13:29:12 by pfu              ###   ########.fr       */
+/*   Updated: 2019/08/27 18:47:46 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	strlen = ft_strlen(s);
 	str = (char *)malloc(sizeof(char) * (strlen + 1));
 	if (str == NULL)

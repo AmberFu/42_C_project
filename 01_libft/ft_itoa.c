@@ -6,13 +6,13 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/11 23:07:25 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/12 00:35:19 by pfu              ###   ########.fr       */
+/*   Updated: 2019/08/27 19:55:28 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		get_len(int n)
+static int	get_len(int n)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int		get_len(int n)
 	return (i);
 }
 
-char	*smallest(char const *str)
+static char	*smallest(char const *str)
 {
 	char	*s;
 	int		len;
@@ -34,6 +34,8 @@ char	*smallest(char const *str)
 	i = 0;
 	len = ft_strlen(str);
 	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (NULL);
 	while (str[i] != '\0')
 	{
 		s[i] = str[i];
@@ -43,7 +45,7 @@ char	*smallest(char const *str)
 	return (s);
 }
 
-char	*negative_itoa(int n)
+static char	*negative_itoa(int n)
 {
 	char	*s;
 	int		len;
@@ -51,6 +53,8 @@ char	*negative_itoa(int n)
 	len = get_len(-n) + 1;
 	n = -n;
 	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (NULL);
 	s[len] = '\0';
 	while (n >= 1)
 	{
@@ -62,7 +66,7 @@ char	*negative_itoa(int n)
 	return (s);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*s;
 	int		len;
@@ -74,6 +78,8 @@ char	*ft_itoa(int n)
 	else
 		len = get_len(n);
 	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s)
+		return (NULL);
 	s[len] = '\0';
 	while (n >= 10)
 	{

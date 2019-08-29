@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 14:53:36 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/27 19:31:49 by pfu              ###   ########.fr       */
+/*   Created: 2019/08/23 22:25:10 by pfu               #+#    #+#             */
+/*   Updated: 2019/08/27 19:58:38 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*newstr;
+	t_list	*newlst;
+	t_list	*tmp;
 
-	i = 0;
-	j = 0;
-	if (!s1 || !s2)
+	if (!lst)
 		return (NULL);
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (newstr == NULL)
+	newlst = ft_lstnew(lst->content, lst->content_size);
+	if (!newlst)
 		return (NULL);
-	while (s1[i] != '\0')
+	newlst = f(newlst);
+	lst = lst->next;
+	tmp = newlst;
+	while (lst)
 	{
-		newstr[i] = s1[i];
-		i++;
+		tmp->next = ft_lstnew(lst->content, lst->content_size);
+		if (!tmp->next)
+			return (NULL);
+		tmp->next = f(tmp->next);
+		lst = lst->next;
+		tmp = tmp->next;
 	}
-	while (s2[j] != '\0')
-	{
-		newstr[i] = s2[j];
-		i++;
-		j++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
+	return (newlst);
 }

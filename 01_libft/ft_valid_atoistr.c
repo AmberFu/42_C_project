@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_valid_atoistr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 14:53:36 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/27 19:31:49 by pfu              ###   ########.fr       */
+/*   Created: 2019/08/18 20:16:53 by pfu               #+#    #+#             */
+/*   Updated: 2019/08/26 23:36:20 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_valid_atoistr(char *str)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*newstr;
+	int				i;
 
 	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (newstr == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+	while (*str)
 	{
-		newstr[i] = s1[i];
+		while (ft_escape_valid_atoi(*str))
+			str++;
+		if (i == 0 && (*str < 48 || *str > 57))
+		{
+			if (*str != '+' && *str != '-')
+				return (0);
+		}
+		else if (i == 0 && *str >= 48 && *str <= 57)
+			return (1);
+		else if (i > 0 && *str >= 48 && *str <= 57)
+			return (1);
+		else if (i > 0 && (*str < 48 || *str > 57))
+			return (0);
+		str++;
 		i++;
 	}
-	while (s2[j] != '\0')
-	{
-		newstr[i] = s2[j];
-		i++;
-		j++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
+	return (1);
 }

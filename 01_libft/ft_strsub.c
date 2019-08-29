@@ -6,7 +6,7 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 11:35:53 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/08 14:44:45 by pfu              ###   ########.fr       */
+/*   Updated: 2019/08/27 21:17:53 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
 	unsigned int	i;
+	unsigned int	slen;
 
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
+	if (!s || str == NULL)
+		return (NULL);
+	slen = ft_strlen(s);
+	if ((len > slen) || (start > slen) || ((len + start) > slen))
 		return (NULL);
 	while (i < len && s[start + i] != '\0')
 	{

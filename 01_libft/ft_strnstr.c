@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 14:53:36 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/27 19:31:49 by pfu              ###   ########.fr       */
+/*   Created: 2019/08/16 23:27:22 by pfu               #+#    #+#             */
+/*   Updated: 2019/08/17 00:09:40 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*newstr;
+	char	*str;
+	size_t	need_len;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (newstr == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+	need_len = ft_strlen(needle);
+	str = (char *)haystack;
+	while (*str && (len - i) >= need_len)
 	{
-		newstr[i] = s1[i];
+		if (ft_check_substr(str, needle))
+			return (str);
 		i++;
+		str++;
 	}
-	while (s2[j] != '\0')
-	{
-		newstr[i] = s2[j];
-		i++;
-		j++;
-	}
-	newstr[i] = '\0';
-	return (newstr);
+	return (NULL);
 }

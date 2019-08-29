@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 14:53:36 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/27 19:31:49 by pfu              ###   ########.fr       */
+/*   Created: 2019/08/16 11:00:59 by pfu               #+#    #+#             */
+/*   Updated: 2019/08/16 11:22:45 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*newstr;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (newstr == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
-	{
-		newstr[i] = s1[i];
+	while (s1[i])
 		i++;
-	}
-	while (s2[j] != '\0')
+	while (n > 0 && *s2)
 	{
-		newstr[i] = s2[j];
+		s1[i] = *s2;
+		s2++;
 		i++;
-		j++;
+		n--;
 	}
-	newstr[i] = '\0';
-	return (newstr);
+	s1[i] = '\0';
+	return (s1);
 }

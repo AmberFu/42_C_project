@@ -6,7 +6,7 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/03 14:50:32 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/03 15:00:28 by pfu              ###   ########.fr       */
+/*   Updated: 2019/08/27 21:45:49 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int	i;
 
 	i = 0;
+	if (!s || !f)
+		return ;
 	while (s[i] != '\0')
 	{
 		f(i, s + i);

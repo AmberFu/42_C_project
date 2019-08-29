@@ -6,13 +6,13 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/08 17:29:31 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/11 22:51:51 by pfu              ###   ########.fr       */
+/*   Updated: 2019/08/27 19:52:09 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	l_index(char const *s)
+static size_t	l_index(char const *s)
 {
 	size_t	i;
 
@@ -22,7 +22,7 @@ size_t	l_index(char const *s)
 	return (i);
 }
 
-size_t	r_index(char const *s)
+static size_t	r_index(char const *s)
 {
 	size_t	i;
 
@@ -32,7 +32,7 @@ size_t	r_index(char const *s)
 	return (i);
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	unsigned int	l_ind;
 	unsigned int	r_ind;
@@ -49,6 +49,8 @@ char	*ft_strtrim(char const *s)
 		return (ft_strnew(0));
 	new_len = r_index(s) - l_ind;
 	str = (char *)malloc(sizeof(char) * (new_len + 1));
+	if (!str)
+		return (NULL);
 	while (s[l_ind + i] != '\0' && (l_ind + i) < r_ind)
 	{
 		str[i] = s[l_ind + i];

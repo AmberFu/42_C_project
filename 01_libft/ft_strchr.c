@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/08 14:53:36 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/27 19:31:49 by pfu              ###   ########.fr       */
+/*   Created: 2019/08/16 20:42:25 by pfu               #+#    #+#             */
+/*   Updated: 2019/08/27 17:09:37 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*newstr;
+	char	*str;
+	char	chr;
+	size_t	len;
+	size_t	i;
 
-	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (newstr == NULL)
-		return (NULL);
-	while (s1[i] != '\0')
+	i = 1;
+	len = ft_strlen(s) + 1;
+	chr = (char)c;
+	str = (char *)s;
+	while (*str && *str != chr)
 	{
-		newstr[i] = s1[i];
 		i++;
+		str++;
 	}
-	while (s2[j] != '\0')
+	if (i == len)
 	{
-		newstr[i] = s2[j];
-		i++;
-		j++;
+		if (c == 0)
+			return (str);
+		else
+			return (NULL);
 	}
-	newstr[i] = '\0';
-	return (newstr);
+	return (str);
 }

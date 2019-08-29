@@ -6,7 +6,7 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 20:16:04 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/13 23:55:45 by pfu              ###   ########.fr       */
+/*   Updated: 2019/08/27 20:29:34 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,24 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*src_tmp;
 	char	*dst_c;
+	char	*src_c;
 	size_t	i;
 
-	i = 0;
-	dst_c = (char *)dst;
-	src_tmp = (char *)malloc(sizeof(char) * (len + 1));
-	if (src_tmp == NULL)
+	i = -1;
+	if (!dst && !src && len > 0)
 		return (NULL);
-	while (i < len)
+	src_c = (char *)src;
+	dst_c = (char *)dst;
+	if (src_c > dst_c)
 	{
-		src_tmp[i] = *(char *)(src + i);
-		i++;
+		while (++i < len)
+			dst_c[i] = src_c[i];
 	}
-	i = 0;
-	while (i < len)
+	else
 	{
-		dst_c[i] = src_tmp[i];
-		i++;
+		while (len-- > 0)
+			dst_c[len] = src_c[len];
 	}
-	free(src_tmp);
 	return (dst);
 }

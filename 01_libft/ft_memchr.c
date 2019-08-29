@@ -6,7 +6,7 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 23:28:55 by pfu               #+#    #+#             */
-/*   Updated: 2019/08/13 23:53:17 by pfu              ###   ########.fr       */
+/*   Updated: 2019/08/27 16:46:32 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned int	i;
 
 	i = 0;
-	if (s == NULL)
-		return (NULL);
 	s_cpy = (unsigned char *)s;
 	char_c = c;
 	while (i < n)

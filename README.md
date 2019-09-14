@@ -7,4 +7,4 @@ C Piscine Project at 42 Silicon Valley
 
 ### 2. [Get_Next_Line](get_next_line.en.pdf): read file line-by-line.
 
-> [Project manual]()
+> [Project manual](https://github.com/AmberFu/42_C_project/blob/master/get_next_line.en.pdf)

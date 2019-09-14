@@ -6,7 +6,7 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 17:22:25 by pfu               #+#    #+#             */
-/*   Updated: 2019/09/13 18:40:25 by pfu              ###   ########.fr       */
+/*   Updated: 2019/09/13 18:43:39 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ int		process_end(char **fdarray, char **line, const int fd)
 }
 
 /*
- * Create Static 2D array to hold different file descriptor:
+ * Create Static 2D array's index to hold different file descriptor's read in string:
  * 		static *fdarray: |0|1|2|3|4|5|6|... each place can hold a string.
  * Use read() to read file (every time read BUFF_SIZE of char),
  * and get size to know exactly byte you read in:

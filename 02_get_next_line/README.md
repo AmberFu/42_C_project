@@ -19,25 +19,25 @@ The aim of this project is to make you code a function that returns a line endin
 
 ### Instruction:
 
-***You can only submit two files: get_next_line.c && get_next_line.h.**
+*You can only submit two files: get_next_line.c && get_next_line.h.*
 
-***You can use your libft.**
+*You can use your libft.**
 
-***All heap allocated memory space must be properly freed when necessary.**
+*All heap allocated memory space must be properly freed when necessary.*
 
-***Your project cannot have memory leaks.**
+*Your project cannot have memory leaks.**
 
-***The libc functions allowed on this project are read, malloc and free.**
+*The libc functions allowed on this project are read, malloc and free.*
 
-***Your function must be prototyped as follow :**
+*Your function must be prototyped as follow .*
 
 > int get_next_line(const int fd, char **line);
 
-***The return value can be 1, 0 or -1.**
+*The return value can be 1, 0 or -1.*
 
-***Static variables are allowed. (Bonus part: Use only one static variable.)**
+*Static variables are allowed. (Bonus part: Use only one static variable.)*
 
-***Bonus part: To be able to manage multiple file descriptor with your get_next_line.**
+*Bonus part: To be able to manage multiple file descriptor with your get_next_line.*
 
 ### Turn in file:
 

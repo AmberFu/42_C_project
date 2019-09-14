@@ -59,5 +59,5 @@ The aim of this project is to make you code a function that returns a line endin
 
 ### Tips:
 
-2D array |0|1|2|3|4|5|6|7|8|...| each index can represent fd!
+2D array: |0|1|2|3|4|5|6|7|8|...| (each index can represent fd!)
 

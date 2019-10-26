@@ -6,7 +6,7 @@
 /*   By: pfu <spashleyfu@gmail.com>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 17:22:25 by pfu               #+#    #+#             */
-/*   Updated: 2019/09/13 18:45:55 by pfu              ###   ########.fr       */
+/*   Updated: 2019/10/25 20:08:13 by pfu              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,11 +130,12 @@ int		process_end(char **fdarray, char **line, const int fd)
  * 		if size == 0: reach EOF.
  * 		if size < 0: something went wrong...error occur.
  * -> Need use bzero to initialize buf[BUFF_SIZE] memory...it maybe some garbage there.
+ *  Check limit number of file descriptors: ulimit -n
  * */
 
 int		get_next_line(const int fd, char **line)
 {
-	static char	*fdarray[4864];
+	static char	*fdarray[256];
 	char		buf[BUFF_SIZE + 1];
 	ssize_t		size;
 

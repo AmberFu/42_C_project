@@ -12,7 +12,7 @@ Build a soild understanding of standard C library by recode it.
 ### 2. [Get_Next_Line](https://github.com/AmberFu/42_C_project/tree/master/02_get_next_line): 
 
 Understand the file descriptor, allocation and static variable. 
-[More description on wiki...]()
+[More description on wiki...](https://github.com/AmberFu/42_C_project/wiki/02_GetNextLine)
 
 > [GNL project manual](https://github.com/AmberFu/42_C_project/blob/master/get_next_line.en.pdf)
 >

@@ -11,5 +11,5 @@ C Piscine Project at 42 Silicon Valley
 
 ### 3. [Fillit]():  find a way to assemble a given Tetriminos set altogether in the smallest possible square.
 
-> [Fillit project manual]()
+> [Fillit project manual](https://github.com/AmberFu/42_C_project/blob/master/fillit.en.pdf)
 

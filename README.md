@@ -26,16 +26,17 @@ Understand the file descriptor, allocation and static variable.
 Find a way to assemble a given Tetriminos set altogether in the smallest possible square. 
 [More description on wiki...](https://github.com/AmberFu/42_C_project/wiki/03_fillit)
 
+> Get 100/100
+>
+> [Fillit project manual](https://github.com/AmberFu/42_C_project/blob/master/fillit.en.pdf)
+>
+
 #### - [Method 1](https://github.com/AmberFu/42_C_project/tree/master/03_fillit): upload to MOULINETTE
 
 Only use array to save information of tetros and list all 19 types of tetros to do verification.
 
-> Get 100/100
->
-
-#### - [Method 2](https://github.com/AmberFu/Fillit_test_version): pass [42 file checker](https://github.com/jgigault/42FileChecker)
+#### - [Method 2](https://github.com/AmberFu/Fillit_test_version): only pass [42 file checker](https://github.com/jgigault/42FileChecker), was not turn into MOULINETTE.
 
 Use linked list to save tetros' information and list all 19 types of tetros to do verification.
 
-> [Fillit project manual](https://github.com/AmberFu/42_C_project/blob/master/fillit.en.pdf)
->
+

@@ -26,7 +26,7 @@ Find a way to assemble a given Tetriminos set altogether in the smallest possibl
 
 Only use array to save information of tetros and list all 19 types of tetros to do verification.
 
-### [method 2](https://github.com/AmberFu/Fillit_test_version): pass [42 file checker](https://github.com/jgigault/42FileChecker)
+#### [method 2](https://github.com/AmberFu/Fillit_test_version): pass [42 file checker](https://github.com/jgigault/42FileChecker)
 
 Use linked list to save tetros' information and list all 19 types of tetros to do verification.
 

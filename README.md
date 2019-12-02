@@ -21,7 +21,7 @@ Understand the file descriptor, allocation and static variable.
 > [GNL project manual](https://github.com/AmberFu/42_C_project/blob/master/get_next_line.en.pdf)
 >
 
-## 3. Fillit: 
+## 3. [Fillit](https://github.com/AmberFu/42_C_project/tree/master/03_fillit): 
 
 Find a way to assemble a given Tetriminos set altogether in the smallest possible square. 
 [More description on wiki...](https://github.com/AmberFu/42_C_project/wiki/03_fillit)

@@ -31,12 +31,12 @@ Find a way to assemble a given Tetriminos set altogether in the smallest possibl
 > [Fillit project manual](https://github.com/AmberFu/42_C_project/blob/master/fillit.en.pdf)
 >
 
-#### - [Method 1](https://github.com/AmberFu/42_C_project/tree/master/03_fillit): upload to MOULINETTE
+#### - [Method 1 - array](https://github.com/AmberFu/42_C_project/tree/master/03_fillit): upload to MOULINETTE
 
-Only use array to save information of tetros and list all 19 types of tetros to do verification.
+Only use **array** to save information of tetros and list all 19 types of tetros to do verification.
 
-#### - [Method 2](https://github.com/AmberFu/Fillit_test_version): only pass [42 file checker](https://github.com/jgigault/42FileChecker), was not turn into MOULINETTE.
+#### - [Method 2 - linked list](https://github.com/AmberFu/Fillit_test_version): only pass [42 file checker](https://github.com/jgigault/42FileChecker), was not turn into MOULINETTE.
 
-Use linked list to save tetros' information and list all 19 types of tetros to do verification.
+Use **linked list** to save tetros' information and list all 19 types of tetros to do verification.
 
 

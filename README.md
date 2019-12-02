@@ -37,6 +37,6 @@ Only use **array** to save information of tetros and list all 19 types of tetros
 
 #### => [Method 2 - linked list](https://github.com/AmberFu/Fillit_test_version): only pass [42 file checker](https://github.com/jgigault/42FileChecker), was not turn into MOULINETTE.
 
-Use **linked list** to save tetros' information and list all 19 types of tetros to do verification.
+Use **linked list** to save tetros' information and list all 19 types of tetros to do verification. (missing to check 26 pcs...)
 
 
